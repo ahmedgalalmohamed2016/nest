@@ -1,0 +1,92 @@
+<div class="ui container" style="margin-top: 78px;">
+    <br/><br/>
+    <div class="ui breadcrumb">
+        <a class="section">Home</a>
+        <div class="divider"> / </div>
+        <a class="section" ui-sref="clinics">Clinics</a>
+        <div class="divider"> / </div>
+        <div class="active section">Create Clinic</div>
+    </div>
+</div>
+<br/><br/>
+<div class="ui stackable two column grid container" >
+    <div ng-include="'templates/clinicMenu.html'"></div>
+
+
+    <div class="twelve wide column">
+
+        <div class="ui mini steps">
+            <div class="step">
+                <i class="heartbeat icon"></i>
+                <div class="content">
+                    <div class="title">Create New Clinic</div>
+                    <div class="description">Choose your shipping options</div>
+                </div>
+            </div>
+            <div class="disabled step">
+                <i class="user icon"></i>
+                <div class="content">
+                    <div class="title">Add Physician</div>
+                    <div class="description">Enter billing information</div>
+                </div>
+            </div>
+            <div class="disabled step">
+                <i class="calendar icon"></i>
+                <div class="content">
+                    <div class="title">Create Appointment</div>
+                    <div class="description">Verify order details</div>
+                </div>
+            </div>
+            <div class="disabled step">
+                <i class="payment icon"></i>
+                <div class="content">
+                    <div class="title">Create Payment</div>
+                    <div class="description">Verify order details</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui raised segment">
+            <img ng-show="loading" class="centerItem" src="../images/load.svg"/>
+
+            <form name="movoForm" ng-submit="submitForm()" novalidate>
+                <h4 class="ui header">Create Clinic </h4>
+                <hr/>
+                <div class="ui form">
+                    <div class="field">
+                        <label>Clinic Name</label>
+                        <div class="ui left icon input">
+                            <input name="clinicName" ng-pattern="longTitle" placeholder="clinic name" 
+                                   ng-model="clinicName" required type="text">
+                            <i class="user icon"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Clinic Address</label>
+                        <div class="ui left icon input">
+                            <input type="text" name="clinicAddress"
+                                   ng-pattern="address" placeholder="clinic Address" 
+                                   ng-model="clinicAddress" required>
+                            <i class="home icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Clinic Phone Number</label>
+                        <div class="ui left icon input">
+                            <input type="text" name="ClinicPhoneNumber"
+                                   ng-pattern="PhoneNumber" placeholder="Clinic Phone Number" 
+                                   ng-model="ClinicPhoneNumber" required>
+                            <i class="signal icon"></i>
+                        </div>
+                    </div>
+
+                    <p>notice :You can add up to 5 clinics to your account</p>
+                    <button class="ui blue submit button" id="btnSubmit" ng-disabled="movoForm.$invalid">Create Clinic</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>

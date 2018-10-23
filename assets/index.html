@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app = "mainApp">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="msvalidate.01" content="23201D0BDAEECF6B9A40405081B86218" />
+        <meta name="description" content="Smart Medical Platform, movoclinic features not only seamlessly encompasses different departments of your clinics but also maintains patient information including doctors and their appointments, treatment received and prescribed medication.">
+        <meta name="keywords" content="Physician,healthcare,egypt,clinic,appointment,facebook,treatment,online,patients,medical,care,drugs,maps,google">
+        <meta name="author" content="Smart Medical Platform">
+        <title> movoclinic | Smart Medical Platform</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="css/angular-motion.min.css"/>
+        <link rel="stylesheet" href="semantic/semantic.min.css"/>
+        <link rel="stylesheet" type="text/css" href="semantic/components/reset.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/site.css">
+        <link rel='stylesheet' href='css/angular-loading-bar.css' type='text/css' media='all' />
+        <link rel="stylesheet" type="text/css" href="semantic/components/container.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/grid.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/header.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/image.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/menu.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/divider.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/list.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/segment.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/dropdown.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/icon.css">
+        <link rel="stylesheet" type="text/css" href="semantic/components/popup.css">
+        <!--<link rel="stylesheet" type="text/css" href="semantic/components/dropdown.css">-->
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/ng-notify.min.css"/>
+        <!--<link rel="stylesheet" href="css/font-awesome.min.css"/>-->
+        <link rel="stylesheet" href="css/angular-motion.min.css"/>
+        <link rel="stylesheet" href="css/movoclinic.css"/>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="semantic/semantic.min.js" ></script>
+        <script type="text/javascript" src="js/angular/angular.js"></script>
+        <script type="text/javascript" src="js/angular/angular-route.js"></script>
+        <script type="text/javascript" src="js/angular/angular-ui-route.js"></script>
+        <script type="text/javascript" src="js/angular/angular-animate.js"></script>
+        <script type="text/javascript" src="js/angular/angular-sanitize.js"></script>
+        <script type="text/javascript" src="js/sails.io.js"></script>
+        <script type="text/javascript" src="js/angular-sails.js"></script>
+        <script type='text/javascript' src='js/loading-bar.min.js'></script>
+        <script type='text/javascript' src='js/fingerPrint.js'></script>
+        <script type="text/javascript" src="js/ng-notify.min.js"></script>
+
+        <!--<script type="text/javascript" src="semantic/components/dropdown.js"></script>-->
+
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/services/UserService.js"></script>
+        <script type="text/javascript" src="js/controllers/headerCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/defaultCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/feedsCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/registerCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/dashboardCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/loginCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/clinicsCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/addClinicCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/updateClinicCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/Physicians/addPhysicianCtrl.js"></script>     
+
+        <style type="text/css">
+            /*            body {
+                            background-color: #FFFFFF;
+                        }*/
+            .ui.menu .item img.logo {
+                margin-right: 1.5em;
+            }
+            .main.container {
+                margin-top: 7em;
+            }
+            .wireframe {
+                margin-top: 2em;
+            }
+            .ui.footer.segment {
+                margin: 5em 0em 0em;
+                padding: 5em 0em;
+            }
+        </style>
+<script>
+function validate(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+</script>
+      
+    </head>
+    <body >
+        <div ui-view="header"></div>
+        <div class="startUp body" ui-view="content" style="min-height:800px !important;"></div>
+        <div ui-view="footer"></div>
+    </body>
+
+</html>

@@ -1,0 +1,59 @@
+<div class="ui container-fluid" >
+    <div class="feeds-header" >
+        <div class="column"> 
+            <br/><br/><br/>
+            <div class="huge ui header grey inverted center middle aligned content">
+                Medical Daily Feeds
+            </div>
+            <p class="ui center aligned header grey inverted" >Get our free service online now , Livetime free and updates.
+            </p>
+            <h2 class="ui center aligned header grey inverted" ng-show="rssdataTotal">
+                We have {{rssdataTotal}} feeds today
+            </h2>
+            <!--            <h4 class="ui center aligned header grey inverted">Reach your customers ,become a leader in market
+                            ,by trust us and our platform you will take all advantages in medical market.</h4>-->
+
+        </div>
+    </div>
+</div>
+
+<div class="ui container-fluid" >
+    <img ng-show="loading" class="centerItem" src="../images/load.svg"/>
+</div>
+<br/>
+<div class="ui stackable four column grid container">
+    <div class="column" ng-repeat="item in rssdata">
+        <div class="ui raised card">
+            <div class="content">
+                <a ng-if="item.source == 'bbc'" class="ui red ribbon label">{{item.source}}</a> 
+                <a ng-if="item.source == 'shorouk'" class="ui orange ribbon label">{{item.source}}</a> 
+                <a ng-if="item.source == 'medicalNews'" class="ui grey ribbon label">{{item.source}}</a> 
+                <a ng-if="item.source == 'cnbc'" class="ui teal ribbon label">{{item.source}}</a> 
+                <a ng-if="item.source == 'fda'" class="ui blue ribbon label">{{item.source}}</a> 
+                <a ng-if="item.source == 'reuters'" class="ui purples ribbon label">{{item.source}}</a> 
+                
+                <div class="ui header">{{item.title}}</div>
+                <div class="meta">{{item.pubDate| date : "fullDate" }}</div>
+                <div class="description">
+                    <p>{{item.description}}</p>
+
+                    <!--<a class="ui teal tag label"> {{item.source}}</a>-->
+                    <!--<h4 class="ui blue header"><strong>write by : {{item.source}}</strong></h4>-->
+                </div>
+            </div>
+            <div class="extra content">
+                <span class="left floated like" ng-show="item.category">
+                    <i class="heartbeat icon"></i>
+                    {{item.category}}
+                </span>
+                <a href="{{item.link}}" target="_blank">
+                    <span class="right floated world blue">
+                        <i class="world icon"></i>
+                         Website
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>   
+</div>
+<br/>

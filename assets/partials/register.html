@@ -1,0 +1,102 @@
+<!--<div class="ui stackable two column grid container-fluid" style="margin-top: 78px;">-->
+
+<div class="ui stackable four column grid" style="margin-top: 78px;min-height: 800px;">
+
+    <div class="one wide column movoBgColor"></div>
+    <div class="six wide column movoBgColor">
+
+        <div class="ui container">
+            <br/><br/>
+            <h4 class="ui grey inverted header">Sign up for an movoclinic and create your movo Platform account</h4>
+            <h4 class="huge ui grey inverted header"> Build on movo Platform for free with no records restrictions</h4>
+
+            <div class="ui grey inverted header"> Guaranteed free development with Lite plans
+                <h5 class="ui header grey inverted"> Start on your projects right away</h5></div>
+
+            <div class="ui grey inverted header"> Guaranteed free development with Lite plans
+                <h5 class="ui header grey inverted"> Start on your projects right away</h5></div>
+
+            <div class="ui grey inverted header"> Guaranteed free development with Lite plans
+                <h5 class="ui header grey inverted"> Start on your projects right away</h5></div>
+
+            <h4 class="ui grey inverted header">  Ready to get started? Sign up today!</h4>
+        </div>
+
+    </div>
+    <div class="one wide column movoBgColor"></div>
+    <!--<div class="one wide column"></div>-->
+    <div class="seven wide column">
+        <br/><br/>
+        <form name="movoForm" ng-submit="submitForm()" novalidate>
+            <h4 class="ui right aligned header">Already have an movo Platform account? <a ui-sref="login"> Log in</a></h4>
+            <hr/>
+            <div class="ui form">
+                <div class="field">
+                    <label>First Name</label>
+                    <div class="ui left icon input">
+                        <input ng-model="myModel.firstName" placeholder="Enter First Name" 
+                               ng-pattern="textName" required type="text">
+                        <i class="user icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <div class="ui left icon input">
+                        <input type="text" ng-model="myModel.lastName" placeholder="Enter Last Name" 
+                               ng-pattern="textName" required>
+                        <i class="user icon"></i>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Mobile Number</label>
+                    <div class="ui left icon input">
+                        <input type="text" ng-model="myModel.mobileNumber"
+                               ng-pattern="PhoneNumber"  placeholder="012123456789"  required>
+                        <i class="signal icon"></i>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Password</label>
+                    <div class="ui left icon input">
+                        <input type="password" ng-model="myModel.password" ng-pattern="password"
+                               placeholder="******"  required>
+                        <i class="lock icon"></i>
+                    </div>
+                </div>
+
+                <p>By clicking Create Account, I accept the movo platform privacy policy and movo platform terms.</p>
+                <button class="ui blue submit button" id="btnSubmit" ng-disabled="movoForm.$invalid">Create Account</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="one wide column"></div>
+</div>
+
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+    (function () {
+        var widget_id = 'xK1RktgqJ5';
+        var d = document;
+        var w = window;
+        function l() {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = '//code.jivosite.com/script/widget/' + widget_id;
+            var ss = document.getElementsByTagName('script')[0];
+            ss.parentNode.insertBefore(s, ss);
+        }
+        if (d.readyState == 'complete') {
+            l();
+        } else {
+            if (w.attachEvent) {
+                w.attachEvent('onload', l);
+            } else {
+                w.addEventListener('load', l, false);
+            }
+        }
+    })();</script>
+<!-- {/literal} END JIVOSITE CODE -->

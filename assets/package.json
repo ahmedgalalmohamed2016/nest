@@ -1,0 +1,17 @@
+{
+  "name": "movoclinic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "movoclinic",
+  "license": "ISC",
+  "dependencies": {
+    "angular-motion": "^0.4.4",
+    "angular-strap": "^2.3.12",
+    "angular-upload": "^1.0.13",
+    "ng-notifications-bar": "0.0.16"
+  }
+}

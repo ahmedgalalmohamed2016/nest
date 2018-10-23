@@ -1,0 +1,90 @@
+
+<div class="ui container" style="margin-top: 78px;">
+    <br/><br/>
+    <div class="ui breadcrumb">
+        <a class="section">Home</a>
+        <div class="divider"> / </div>
+        <a class="section" ui-sref="Physicians">Physicians</a>
+        <div class="divider"> / </div>
+        <div class="active section">Add Physician</div>
+    </div>
+</div>
+<br/><br/>
+<div class="ui stackable two column grid container" >
+    <div ng-include="'templates/clinicMenu.html'"></div>
+
+
+    <div class="twelve wide column">
+
+
+
+        <div class="ui mini steps">
+            <div class="disabled step">
+                <i class="heartbeat icon"></i>
+                <div class="content">
+                    <div class="title">Create New Clinic</div>
+                    <div class="description">Choose your shipping options</div>
+                </div>
+            </div>
+            <div class="step">
+                <i class="user icon"></i>
+                <div class="content">
+                    <div class="title">Add Physician</div>
+                    <div class="description">Enter billing information</div>
+                </div>
+            </div>
+            <div class="disabled step">
+                <i class="calendar icon"></i>
+                <div class="content">
+                    <div class="title">Create Appointment</div>
+                    <div class="description">Verify order details</div>
+                </div>
+            </div>
+            <div class="disabled step">
+                <i class="payment icon"></i>
+                <div class="content">
+                    <div class="title">Create Payment</div>
+                    <div class="description">Verify order details</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ui  segment">
+            <img ng-show="loading" class="centerItem" src="../images/load.svg"/>
+
+            <form name="movoForm" ng-submit="submitForm()" novalidate>
+                <h4 class="ui header">Clinic information </h4>
+                <hr/>
+                   <div class="ui form">
+                        <p><strong>clinic Name :</strong> {{clinicData.clinicName}}  |  <strong>Address : </strong>{{clinicData.Address}}</p>
+                        <p><strong>Phone Number :</strong> {{clinicData.PhoneNumber}}   |  <strong>Reference Number :</strong> {{clinicData.refNumber}}</p>
+                    </div>
+                <br/>
+</div>
+
+        <div class="ui raised segment">
+            <img ng-show="loading" class="centerItem" src="../images/load.svg"/>
+
+            <form name="movoForm" ng-submit="submitForm()" novalidate>
+                <h4 class="ui header">Add Physician </h4>
+                <hr/>
+                <br/>
+                <div class="ui form">
+                    <!--<div class="field">-->
+                    <div class="ui action huge input fluid">
+                          <input ng-model="myModel.mobileNumber" ng-pattern="PhoneNumber"
+                          type="text"  onkeypress='validate(event)' required
+                          placeholder="Enter Physician Mobile Number To Start Search...">
+                            
+                    </div>
+                    <!--</div>-->
+                        <button class="ui blue button" id="btnSubmit"
+                            ng-click="submitForm()" ng-disabled="movoForm.$invalid">Search</button>
+                 <br/>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>

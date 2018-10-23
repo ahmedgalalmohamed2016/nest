@@ -1,0 +1,51 @@
+<div class="ui container" style="margin-top: 78px;">
+    <br/><br/>
+    <div class="ui breadcrumb">
+        <a class="section">Home</a>
+        <div class="divider"> / </div>
+        <div class="active section">Clinics</div>
+    </div>
+</div>
+<br/><br/>
+<div class="ui stackable two column grid container" >
+    <div ng-include="'templates/clinicMenu.html'"></div>
+    <div class="twelve wide column">
+         <img ng-show="loading" class="centerItem" src="../images/load.svg"/>
+        <div class="ui segment">
+            <button class="ui teal basic button" ui-sref="addClinic"><i class="desktop icon"></i>  Create Clinic</button></div>
+        <div class="ui divided items">
+            <div class="item" ng-repeat="item in myClinics">
+                <div class="content">
+                    <a class="header">{{item.clinicName}}</a>
+                    <div class="meta">
+                        <span class="cinema"><strong>Clinic Id : {{item.refNumber}} | </strong></span>
+                        <span class="cinema">Last update : {{item.updatedAt | date}}</span>
+                    </div>
+                    <div class="description">
+                        <p>PhoneNumber : {{item.PhoneNumber}}</p>
+                        <p>Address : {{item.Address}}</p>
+                    </div>
+                    <div class="extra">
+                        <button  class="ui right floated primary button" ng-show="item.owner" ng-click="manageClinic(item.id)">
+                            Manage Clinic
+                        </button >
+                         <button  class="ui disabled right floated primary button" ng-hide="item.owner"  ng-click="manageClinic(item.id)">
+                            Manage Clinic
+                        </button >
+                        <button  class="ui right floated teal button" ng-show="item.owner"  ng-click="addPhysician(item.id)">
+                            Add Physician
+                        </button >
+                        
+                        
+                        <div ng-show=" item.owner" class="mini ui teal label">owner</div>
+                         <div ng-hide=" item.owner" class="mini ui  grey label">Not owner</div>
+                        <div ng-show="item.isApproved" class="mini ui blue label">Approved</div>
+                        <div ng-show="item.isLockedOut" class="mini ui red label">Locked</div>
+                        <div ng-hide="item.isLockedOut" class="mini ui orange label">Active</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br/>
+    </div>
+</div>
